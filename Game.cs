@@ -9,6 +9,7 @@ namespace ProjetNarratif
         internal bool IsGameOver() => isFinished;
         static bool isFinished;
         static string nextRoom = "";
+        internal static int healthPoints = 3;
 
         internal void Add(Room room)
         {
@@ -16,6 +17,20 @@ namespace ProjetNarratif
             if (currentRoom == null)
             {
                 currentRoom = room;
+            }
+        }
+
+        internal static void LoseHealth()
+        {
+            healthPoints--;
+            if (healthPoints > 0)
+            {
+                Console.WriteLine(healthPoints + "PV restant");
+            }
+            else
+            {
+                Console.WriteLine("Tu es mort!");
+                Finish();
             }
         }
 
