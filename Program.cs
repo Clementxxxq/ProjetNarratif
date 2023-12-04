@@ -6,7 +6,11 @@ game.Add(new Bedroom());
 game.Add(new Bathroom());
 game.Add(new Salon());
 game.Add(new Bedroom2());
-game.Add(new AtticRoom());
+game.Add(new Cave());
+game.Add(new Cuisine());
+
+
+
 
 while (!game.IsGameOver())
 {

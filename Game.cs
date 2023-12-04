@@ -10,7 +10,8 @@ namespace ProjetNarratif
         static bool isFinished;
         static string nextRoom = "";
         internal static int healthPoints = 3;
-
+        
+        
         internal void Add(Room room)
         {
             rooms.Add(room);
@@ -64,5 +65,7 @@ namespace ProjetNarratif
                 }
             }
         }
+
+
     }
 }

@@ -15,15 +15,17 @@ Tu peux revenir dans ta [chambre].
                 case "bain":
                     Console.WriteLine("这么热的水你也敢洗？烫死你!");
                     Game.LoseHealth();
-
                     break;
+
                 case "miroir":
                     Console.WriteLine("Tu aperçois les chiffres 1206 écrits sur la brume sur le miroir.");
                     break;
+
                 case "chambre":
                     Console.WriteLine("Tu retournes dans ta chambre.");
                     Game.Transition<Bedroom>();
                     break;
+
                 default:
                     Console.WriteLine("Commande invalide.");
                     break;

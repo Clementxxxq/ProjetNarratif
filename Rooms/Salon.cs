@@ -2,12 +2,18 @@
 {
     internal class Salon : Room
     {
+        private bool passwordEntered = false; 
+
+        private string Bedroom2Password = "1206";
+
         internal override string CreateDescription() =>
 @"Le salon est très calme, tellement calme que cela en devient effrayant. 
 Sur la table à manger, il y a des [fruit]s. 
 Sur le mur, il y a une [peinture] par ta fille. 
 La [télévision] est éteinte. 
-Tu trouves ça étrange et appelles ta fille plusieurs fois, mais personne ne répond.
+La porte de la [cuisine] est ouverte.
+Tu trouves ça étrange et appelles ta fille plusieurs fois.
+Alors, tu te rends à la porte de la [chambre2] de ta fille et tu frappes, mais personne ne répond.
 Tu peux revenir dans ta [chambre].
 ";
 
@@ -42,6 +48,35 @@ Tu peux revenir dans ta [chambre].
                     Console.WriteLine("Tu as allumé la télévision, mais il n'y avait aucun signal.");
                     break;
 
+                case "chambre2":
+                    if (!passwordEntered)
+                    {
+                        Console.WriteLine("La porte est verrouillée et nécessite un mot de passe.");
+                        Console.WriteLine("Veuillez entrer le mot de passe :");
+                        string passwordAttempt = Console.ReadLine();
+
+                        if (passwordAttempt == Bedroom2Password)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("Mot de passe correct. La porte s'ouvre.");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            passwordEntered = true;
+                            Game.Transition<Bedroom2>();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Mot de passe incorrect. La porte reste verrouillée.");
+                            Console.ForegroundColor = ConsoleColor.White;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("La porte est déjà ouverte.");
+                        Game.Transition<Bedroom2>();
+                    }
+                    break;
+
                 case "chambre":
                     Console.WriteLine("Tu retournes dans ta chambre.");
                     Game.Transition<Bedroom>();
@@ -51,36 +86,6 @@ Tu peux revenir dans ta [chambre].
                     Console.WriteLine("Commande invalide.");
                     break;
             }
-
-        }
-        static void PrintColoredText(string text)
-        {
-            string[] words = text.Split(' ');
-
-            foreach (string word in words)
-            {
-                if (word.ToLower() == "bleue")
-                {
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                }
-                else if (word.ToLower() == "rouge")
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                }
-                else if (word.ToLower() == "vert")
-                {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                }
-                else
-                {
-                    Console.ForegroundColor = Console.ForegroundColor;
-                }
-
-                Console.Write(word + " ");
-            }
-
-            Console.WriteLine(); // Move to the next line after printing the colored text
-            Console.ResetColor(); // Reset color to default
         }
     }
 }
