@@ -23,7 +23,7 @@ Tu peux revenir dans ta [chambre].
             switch (choice)
             {
                 case "fruit":
-                    Console.WriteLine("妈妈说水果要洗洗再吃哦~ ");
+                    Console.WriteLine("Ma mère dit qu'il faut laver les fruits avant de les manger !");
                     Game.LoseHealth();
                     break;
 

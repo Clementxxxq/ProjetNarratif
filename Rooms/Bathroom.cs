@@ -13,7 +13,7 @@ Tu peux revenir dans ta [chambre].
             switch (choice)
             {
                 case "bain":
-                    Console.WriteLine("这么热的水你也敢洗？烫死你!");
+                    Console.WriteLine("Tu oses te laver avec de l'eau aussi chaude ? Tu vas te brûler !");
                     Game.LoseHealth();
                     break;
 
