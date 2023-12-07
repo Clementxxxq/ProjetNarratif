@@ -10,7 +10,7 @@
 @"Le salon est très calme, tellement calme que cela en devient effrayant. 
 Sur la table à manger, il y a des [fruit]s. 
 Sur le mur, il y a une [peinture] par ta fille. 
-La [télévision] est éteinte. 
+La [tv] est éteinte. 
 La porte de la [cuisine] est ouverte.
 Tu trouves ça étrange et appelles ta fille plusieurs fois.
 Alors, tu te rends à la porte de la [chambre2] de ta fille et tu frappes, mais personne ne répond.
@@ -44,8 +44,9 @@ Tu peux revenir dans ta [chambre].
                         Console.WriteLine("\net on ne sait pas où se trouve la partie manquante de la peinture.");
                     break;
 
-                case "télévision":
-                    Console.WriteLine("Tu as allumé la télévision, mais il n'y avait aucun signal.");
+                case "tv":
+                    Console.WriteLine("Tu as allumé la télévision.");
+                    Game.Transition<jeu>();
                     break;
 
                 case "chambre2":

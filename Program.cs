@@ -8,6 +8,7 @@ game.Add(new Salon());
 game.Add(new Bedroom2());
 game.Add(new Cave());
 game.Add(new Cuisine());
+game.Add(new jeu());
 
 
 
