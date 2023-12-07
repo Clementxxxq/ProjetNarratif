@@ -77,6 +77,11 @@ Tu peux revenir dans ta [chambre].
                     }
                     break;
 
+                case "cuisine":
+                    Console.WriteLine("Tu entre dans la cuisine.");
+                    Game.Transition<Cuisine>();
+                    break;
+
                 case "chambre":
                     Console.WriteLine("Tu retournes dans ta chambre.");
                     Game.Transition<Bedroom>();

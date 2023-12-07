@@ -18,7 +18,11 @@ Tu peux revenir dans ta [chambre].
                     break;
 
                 case "miroir":
-                    Console.WriteLine("Tu aperçois les chiffres 1206 écrits sur la brume sur le miroir.");
+                    Console.Write("Tu aperçois les chiffres ");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.Write("1206 ");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("écrits sur la brume sur le miroir.");
                     break;
 
                 case "chambre":

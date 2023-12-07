@@ -1,4 +1,6 @@
-﻿namespace ProjetNarratif.Rooms
+﻿using System.Net.Security;
+
+namespace ProjetNarratif.Rooms
 {
     internal class Bedroom2 : Room
     {
@@ -43,6 +45,17 @@ Tu peux revenir dans le [salon].
                             Console.WriteLine("Mot de passe incorrect.");
                             Console.ForegroundColor = ConsoleColor.White;
                         }
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkBlue;
+                        Console.WriteLine("5 octobre 2007, vendredi, beau temps. " +
+                            "\n\tCe soir, papa travaille encore. " +
+                            "\n\tEst-ce qu'il jouera avec moi demain ? " +
+                            "\n\tJe lui dis depuis un mois. " +
+                            "\n\tJ'ai préparé une surprise dans la cave, j'espère qu'il ne la trouvera pas. Hihi.");
+                        Console.ForegroundColor = ConsoleColor.White;
+
                     }                    
                     break;
 
